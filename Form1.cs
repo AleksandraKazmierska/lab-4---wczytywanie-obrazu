@@ -19,7 +19,7 @@ namespace lab_4___wczytywanie_obrazu
             pictureBox1_Click(this, EventArgs.Empty);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
             if (pictureBox1.Image != null)
             {
