@@ -30,7 +30,7 @@ namespace lab_4___wczytywanie_obrazu
                     for (int x = 0; x < bmp.Width; x++)
                     {
                         Color pixelColor = bmp.GetPixel(x, y);
-                        if (pixelColor != Color.Green) 
+                        if (pixelColor.G < pixelColor.R && pixelColor.G < pixelColor.B) 
                         {
                             bmp.SetPixel(x, y, Color.Black); 
                         }
