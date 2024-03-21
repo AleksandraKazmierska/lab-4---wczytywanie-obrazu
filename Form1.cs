@@ -80,7 +80,7 @@ namespace lab_4___wczytywanie_obrazu
         {
             if (pictureBox1.Image != null)
             {
-                pictureBox1.Image.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                pictureBox1.Image.RotateFlip(RotateFlipType.RotateNoneFlipY);
                 pictureBox1.Invalidate();
             }
         }
