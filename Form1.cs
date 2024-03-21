@@ -18,5 +18,28 @@ namespace lab_4___wczytywanie_obrazu
         {
             pictureBox1_Click(this, EventArgs.Empty);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image != null)
+            {
+                Bitmap bmp = (Bitmap)pictureBox1.Image;
+
+                for (int y = 0; y < bmp.Height; y++)
+                {
+                    for (int x = 0; x < bmp.Width; x++)
+                    {
+                        Color pixelColor = bmp.GetPixel(x, y);
+                        if (pixelColor != Color.Green) 
+                        {
+                            bmp.SetPixel(x, y, Color.Black); 
+                        }
+                    }
+                }
+
+                pictureBox1.Image = bmp;
+                pictureBox1.Invalidate();
+            }
+        }
     }
 }
