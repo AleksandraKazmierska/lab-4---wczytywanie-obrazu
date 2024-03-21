@@ -35,7 +35,7 @@ namespace lab_4___wczytywanie_obrazu
                 {
                     pictureBox1.Image.RotateFlip(RotateFlipType.Rotate270FlipNone);
                 }
-                pictureBox1.Invalidate(); 
+                pictureBox1.Invalidate();
             }
         }
 
@@ -46,12 +46,43 @@ namespace lab_4___wczytywanie_obrazu
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-                
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image != null)
+            {
+                Bitmap bmp = (Bitmap)pictureBox1.Image;
+                Bitmap invertedBmp = new Bitmap(bmp.Width, bmp.Height);
+
+                for (int y = 0; y < bmp.Height; y++)
+                {
+                    for (int x = 0; x < bmp.Width; x++)
+                    {
+                        Color pixelColor = bmp.GetPixel(x, y);
+                        Color invertedColor = Color.FromArgb(255 - pixelColor.R, 255 - pixelColor.G, 255 - pixelColor.B);
+                        invertedBmp.SetPixel(x, y, invertedColor);
+                    }
+                }
+
+                pictureBox1.Image = invertedBmp;
+                pictureBox1.Invalidate();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image != null)
+            {
+                pictureBox1.Image.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                pictureBox1.Invalidate();
+            }
         }
     }
 }
